@@ -1,0 +1,49 @@
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, td, th {
+            border: 1px solid #999;
+            padding: 5px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Задания для call-центра</title>
+</head>
+<body>
+<h2>Заказы</h2>
+<form method="GET" action="/operator">
+    Заказ №: <input type="number" name="orderId">
+    <input type="submit" value="Найти"/>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <lablel>Номер заказа</lablel>
+        </th>
+        <th>
+            <lablel>Дата и время</lablel>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#orders}}
+    <tr>
+        <td>
+            {{ORD_ID}}
+        </td>
+        <td>
+            {{ORD_DATE}}
+        </td>
+    </tr>
+    {{/orders}}
+    </tbody>
+</table>
+<p><a href="/operator">Обновить</a></p>
+</body>
+</html>
